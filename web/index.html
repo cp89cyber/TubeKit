@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TubeKit</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="headerInner">
+        <div>
+          <h1 class="title">TubeKit</h1>
+          <p class="subtitle">Unofficial YouTube web client (no Data API)</p>
+        </div>
+        <div class="links">
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            >YouTube</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="panel controls">
+        <div class="fieldRow">
+          <div class="field">
+            <label for="videoInput">Video URL or ID</label>
+            <input
+              id="videoInput"
+              type="text"
+              autocomplete="off"
+              placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            />
+          </div>
+          <button id="playBtn" class="btn primary" type="button">Play</button>
+        </div>
+
+        <div class="grid2">
+          <div class="fieldRow">
+            <div class="field">
+              <label for="channelInput">Channel ID (UC...)</label>
+              <input
+                id="channelInput"
+                type="text"
+                autocomplete="off"
+                placeholder="UC_x5XG1OV2P6uZZ5FSM9Ttw"
+              />
+            </div>
+            <button id="channelBtn" class="btn" type="button">Load</button>
+          </div>
+
+          <div class="fieldRow">
+            <div class="field">
+              <label for="playlistInput">Playlist ID (PL...)</label>
+              <input
+                id="playlistInput"
+                type="text"
+                autocomplete="off"
+                placeholder="PL..."
+              />
+            </div>
+            <button id="playlistBtn" class="btn" type="button">Load</button>
+          </div>
+        </div>
+
+        <div class="statusRow">
+          <div id="status" class="status" role="status" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="panel player">
+        <div class="playerTop">
+          <div class="playerFrameWrap">
+            <div id="playerPlaceholder" class="playerPlaceholder">
+              Pick a video from a feed, or paste a video URL/ID.
+            </div>
+            <iframe
+              id="playerFrame"
+              title="YouTube player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              referrerpolicy="no-referrer"
+            ></iframe>
+          </div>
+
+          <div class="meta">
+            <div id="metaTitle" class="metaTitle"></div>
+            <div id="metaByline" class="metaByline"></div>
+            <div id="metaActions" class="metaActions"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel results">
+        <div class="resultsHeader">
+          <h2 id="resultsTitle" class="resultsTitle">Feed</h2>
+          <div id="resultsSub" class="resultsSub"></div>
+        </div>
+        <ul id="resultsList" class="list"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footerInner">
+        <span
+          >Uses YouTube embeds and public RSS feeds; does not download video
+          files.</span
+        >
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
+
